@@ -20,7 +20,8 @@ import tempfile
 from pathlib import Path
 
 import requests
-from telegram import Update, ParseMode
+from telegram import Update
+from telegram.constants import ParseMode
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 TELEGRAM_TOKEN = "8598252838:AAH9vTbHGwy997NqRkbIZ9IMPGfBY6YUOaQ"
