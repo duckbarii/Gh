@@ -141,13 +141,13 @@ def handle_command(chat_id, text):
             if pm == "apt":
                 cmd = "sudo apt-get update -y && sudo apt-get install -y tmate"
             elif pm == "dnf":
-                cmd = "sudo dnf install -y tmate"
+                cmd = "sudo dnf install -y tmate -s"
             elif pm == "yum":
-                cmd = "sudo yum install -y epel-release && sudo yum install -y tmate"
+                cmd = "sudo yum install -y epel-release && sudo yum install -y tmate -s"
             elif pm == "pacman":
-                cmd = "sudo pacman -Sy --noconfirm tmate"
+                cmd = "sudo pacman -Sy --noconfirm tmate -s"
             else:
-                send_message(chat_id, "Unsupported package manager. Install tmate manually.")
+                send_message(chat_id, "Unsupported package manager. Install tmate -s manually.")
                 return
             send_message(chat_id, f"Installing via `{pm}`. This may require sudo.")
             code, out, err = run_cmd(cmd, timeout=600, shell=True)
